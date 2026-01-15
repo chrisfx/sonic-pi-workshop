@@ -671,6 +671,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sync-o-side-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync o "side chain"
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -797,6 +808,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sync-o-side-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync o "side chain"
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -823,6 +845,45 @@
   <span class="n">use_synth</span> <span class="p">:</span><span class="n">fm</span>
   <span class="n">play</span> <span class="p">:</span><span class="n">e2</span>
   <span class="n">sleep</span> <span class="mi">1</span>
+<span class="n">end</span>
+</code></pre></div>
+
+<h2 id="sync-o-side-chain">Sync o "side chain"<a class="headerlink" href="#sync-o-side-chain" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">use_bpm</span> <span class="mi">110</span>
+
+<span class="c1"># ------------------------</span>
+<span class="c1"># Kick</span>
+<span class="c1"># ------------------------</span>
+<span class="n">live_loop</span> <span class="p">:</span><span class="n">kick</span> <span class="n">do</span>
+  <span class="n">sample</span> <span class="p">:</span><span class="n">bd_haus</span><span class="p">,</span> <span class="n">amp</span><span class="p">:</span> <span class="mi">2</span>
+  <span class="n">sleep</span> <span class="mi">1</span>
+<span class="n">end</span>
+
+<span class="c1"># ------------------------</span>
+<span class="c1"># Off-beat HiHat</span>
+<span class="c1"># ------------------------</span>
+<span class="n">live_loop</span> <span class="p">:</span><span class="n">hihat</span> <span class="n">do</span>
+  <span class="n">sync</span> <span class="p">:</span><span class="n">kick</span>
+  <span class="n">sleep</span> <span class="mf">0.5</span>
+  <span class="n">sample</span> <span class="p">:</span><span class="n">drum_cymbal_closed</span><span class="p">,</span> <span class="n">amp</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">:</span> <span class="mi">110</span>
+  <span class="n">sleep</span> <span class="mf">0.5</span>
+<span class="n">end</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1">### ========== KICK ==========</span>
+<span class="n">live_loop</span> <span class="p">:</span><span class="n">kick</span> <span class="n">do</span>
+  <span class="n">sample</span> <span class="p">:</span><span class="n">bd_haus</span> <span class="c1">#, amp: 0.2, cutoff: 70</span>
+  <span class="n">sleep</span> <span class="mi">2</span>
+<span class="n">end</span>
+
+
+<span class="c1">### ========== ARP ==========</span>
+<span class="n">live_loop</span> <span class="p">:</span><span class="n">arp</span><span class="p">,</span> <span class="n">sync</span><span class="p">:</span> <span class="p">:</span><span class="n">kick</span> <span class="n">do</span>
+  <span class="n">use_synth</span> <span class="p">:</span><span class="n">sine</span>
+  <span class="n">use_synth_defaults</span> <span class="n">release</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">amp</span><span class="p">:</span> <span class="mf">0.5</span>
+  <span class="n">notes</span> <span class="o">=</span> <span class="p">(</span><span class="n">scale</span> <span class="p">:</span><span class="n">d3</span><span class="p">,</span> <span class="p">:</span><span class="n">minor_pentatonic</span><span class="p">,</span> <span class="n">num_octaves</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">shuffle</span>
+  <span class="n">play</span> <span class="n">notes</span><span class="o">.</span><span class="n">tick</span>
+  <span class="n">sleep</span> <span class="mf">0.25</span>
 <span class="n">end</span>
 </code></pre></div>
 
