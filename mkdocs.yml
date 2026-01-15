@@ -1,0 +1,43 @@
+site_name: Sonic Pi 
+site_description: Learn Live Coding Music with Sonic Pi
+site_author: Sitrof
+repo_url: https://github.com/chrisfx/sonic-pi-workshop
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - content.code.copy
+  palette:
+    scheme: slate
+    primary: deep purple
+    accent: cyan
+
+nav:
+  - Home: index.md
+  - Setup: setup.md
+  - Basics: basics.md
+  - Rhythm: rhythm.md
+  - Melody: melody.md
+  - Effects: fx.md
+  - Patterns: patterns.md
+  - Live Coding: live-coding.md
+  - Performance Tips: performance.md
+  - Best Practices: best-practices.md
+  - Resources: resources.md
+
+plugins:
+  - i18n:
+      default_language: en
+      languages:
+        en: English
+        es: Español
+      default_language_only: false
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
