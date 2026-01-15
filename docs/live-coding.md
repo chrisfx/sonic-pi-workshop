@@ -35,3 +35,20 @@ live_loop :hihat do
 end
 ```
 
+```python
+### ========== KICK ==========
+live_loop :kick do
+  sample :bd_haus #, amp: 0.2, cutoff: 70
+  sleep 2
+end
+
+
+### ========== ARP ==========
+live_loop :arp, sync: :kick do
+  use_synth :sine
+  use_synth_defaults release: 0.3, amp: 0.5
+  notes = (scale :d3, :minor_pentatonic, num_octaves: 2).shuffle
+  play notes.tick
+  sleep 0.25
+end
+```
