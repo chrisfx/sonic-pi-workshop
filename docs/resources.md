@@ -15,6 +15,5 @@
 ## Inspiración
 
 - House  
-- Techno  
-- IDM  
+- Techno    
 - Algoritmos generativos

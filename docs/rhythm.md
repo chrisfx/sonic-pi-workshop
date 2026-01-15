@@ -13,6 +13,7 @@ sample :sn_dolf
 ## Sample House
 ```python
 live_loop :house do
+  sample :ambi_choir, rate: 0.3
   sample :bd_haus
   sleep 1
 end
